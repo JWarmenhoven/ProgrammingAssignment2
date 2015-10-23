@@ -1,3 +1,5 @@
+import pandas as pd
+
 def rankall(outcome, n='best'):
     if outcome not in ['heart attack', 'heart failure', 'pneumonia']:
         return('invalid outcome')
