@@ -53,16 +53,11 @@ cacheSolve <- function(x, ...) {
   # First get the matrix from the makeCacheMatrix object.
   data <- x$get()
   
-  # Inverse calculation requires matrix to be symmetric.
-  # Check input and calculate inverse. Set the value in the
+  # Calculate inverse, set the value in the
   # makeCacheObject and return it.
-  if(isSymmetric.matrix(data)) {
-    inverse <- solve(data, ...)
-    x$set_inverse(inverse)
-    inverse
-  }
-  else {
-    print('Inverse not calculated: Matrix has to be symmetric!')
+  inverse <- solve(data, ...)
+  x$set_inverse(inverse)
+  inverse
   }
   
 }
